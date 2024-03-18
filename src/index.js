@@ -1,20 +1,20 @@
 import express from "express";
+import cors from "cors";
 
 import { router as authRouter } from "./routers/auth.route.js";
 
-const port = process.env.PORT ?? 8080;
+const port = process.env.PORT ?? 2322;
 const app = express();
+const corsOptions = {
+  origin: "http://localhost:8080",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+
+app.use(cors(corsOptions));
 
 app.use("/auth", authRouter);
 
