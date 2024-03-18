@@ -2,7 +2,7 @@
   "name": "be-ecommerce",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/index.js",
+    "start": "npx prisma db push --accept-data-loss && nodemon ./src/index.js",
     "test": "jest"
   },
   "devDependencies": {
