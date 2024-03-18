@@ -1,10 +1,7 @@
 {
   "name": "foodcare_be",
   "scripts": {
-    "compile": "tsc && tsc-alias",
-    "build": "npx prisma db push --accept-data-loss && esbuild ./src/index.ts --bundle --minify --platform=node --target=es2020 --outfile=dist/build/bundle/bundle.js",
-    "dev": "nodemon ./src/index.ts",
-    "start": "node ./dist/build/bundle/bundle.js",
+    "start": "npx prisma db push --accept-data-loss && nodemon ./src/index.ts",
     "test": "jest"
   },
   "devDependencies": {
