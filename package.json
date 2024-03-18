@@ -1,5 +1,6 @@
 {
   "name": "be-ecommerce",
+  "type": "module",
   "scripts": {
     "start": "nodemon ./src/index.js",
     "test": "jest"

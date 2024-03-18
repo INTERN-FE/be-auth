@@ -1,9 +1,9 @@
 import bcryptjs from "bcryptjs";
-import { prisma } from "../lib/dbConnector";
+import { prisma } from "../lib/dbConnector.js";
 import { createHash } from "crypto";
-import { generateToken } from "../lib/tokenGenerator";
+import { generateToken } from "../lib/tokenGenerator.js";
 
-export * as authController from "./auth.controller";
+export * as authController from "./auth.controller.js";
 
 export const signUp = async (req, res, next) => {
   try {
