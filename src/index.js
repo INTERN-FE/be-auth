@@ -1,7 +1,6 @@
 import express from "express";
 
-import { router as userRouter } from "./routers/user.route";
-import swaggerUi from "swagger-ui-express";
+import { router as authRouter } from "./routers/auth.route";
 
 const port = process.env.PORT ?? 8080;
 const app = express();
@@ -17,17 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(
-  "/docs",
-  swaggerUi.serve,
-  swaggerUi.setup(undefined, {
-    swaggerOptions: {
-      url: "/swagger.json",
-    },
-  })
-);
-app.use("/static/public", express.static("./public/uploads/"));
-app.use("/user", userRouter);
+app.use("/auth", authRouter);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);

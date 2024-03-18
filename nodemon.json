@@ -1,4 +1,4 @@
 {
-  "exec": "ts-node",
+  "exec": "bun",
   "ignore": ["*.test.ts"]
 }
